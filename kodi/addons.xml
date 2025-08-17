@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addons>
+  <!-- RichMovie addon -->
+  <addon
+          id="plugin.video.richmovie"
+          version="2.1.0"
+          name="RichMovie"
+          provider-name="Richie"
+          icon="icon.png"
+          fanart="fanart.jpg">
+
+      <!-- ========== RUNTIME DEPENDENCIES ========== -->
+      <requires>
+          <!-- Kodi Python API -->
+          <import addon="xbmc.python"            version="3.0.0" />
+
+          <!-- HTTP klient pro Webshare SDK -->
+          <import addon="script.module.requests" version="2.31.0" />
+
+          <!-- Stream resolver (prémiové odkazy ze Sosáče)
+               optional="true" = doplněk se spustí i bez modulu;
+               při prvním přehrávání se jej pokusíme doinstalovat
+               pomocí funkce _ensure_stream_resolver() -->
+          <import addon="script.module.stream.resolver"
+                  version="1.7.3"
+                  optional="true" />
+
+          <!-- ⚠️  POZOR ⚠️
+               Nepřidávejte zde script.module.pymediainfo!
+               Knihovnu dodáváme lokálně v resources/lib/pymediainfo
+               včetně binárek libmediainfo.* pro více platforem. -->
+      </requires>
+
+      <!-- ========== ENTRY POINT (PLUGIN GUI) ========== -->
+      <extension point="xbmc.python.pluginsource" library="plugin.py">
+          <provides>video</provides>
+      </extension>
+
+      <!-- ========== BACKGROUND NEXT-UP SERVICE ========== -->
+      <extension point="xbmc.service" library="service_nextup.py" start="startup" />
+
+      <!-- ========== ADD-ON METADATA ========== -->
+      <extension point="xbmc.addon.metadata">
+
+          <!-- ── ASSETS – Kodi 19+ vyžaduje právě zde ── -->
+          <assets>
+              <icon>icon.png</icon>
+              <fanart>fanart.jpg</fanart>
+              <screenshot>resources/screenshots/screen01.png</screenshot>
+              <screenshot>resources/screenshots/screen02.png</screenshot>
+          </assets>
+
+          <summary lang="cs">Rychlé vyhledávání a přehrávání filmů z Webshare.cz a Sosáče</summary>
+          <summary lang="en">Search &amp; play movies from Webshare.cz and Sosac.tv in seconds</summary>
+
+          <description lang="cs">
+              ⚡ <b>RichMovie 1.4</b> přidává Next-Up přednačítání, integraci Sosáče
+              (prémiový Streamuj.tv) a stále obsahuje vlastní kopii
+              <code>pymediainfo</code> – funguje tedy i offline.
+          </description>
+
+          <description lang="en">
+              ⚡ <b>RichMovie 1.4</b> now includes Next-Up pre-loading and Sosac.tv
+              integration (premium Streamuj.tv links) while still shipping a
+              bundled copy of <code>pymediainfo</code>.
+          </description>
+
+          <platform>all</platform>
+          <license>MIT</license>
+
+          <changelog lang="cs">
+              v1.4.3 – oprava XML (komentář v tagu <code>&lt;addon&gt;</code>); nová ikona; bump verze kvůli instalaci.<br/>
+              v1.4.2 – přidána nová ikona doplňku (SnowWhite-wine).<br/>
+              v1.4.1 – přesunut <code>&lt;assets&gt;</code> do metadata (ikona se začala zobrazovat).<br/>
+              v1.4.0 – Next-Up • integrace Sosáče • volitelný <code>script.module.stream.resolver</code> • lokální <code>pymediainfo</code>.
+          </changelog>
+      </extension>
+  </addon>
+</addons>
