@@ -3,7 +3,7 @@
   <!-- RichMovie addon -->
   <addon
           id="plugin.video.richmovie"
-          version="2.2.3"
+          version="2.3.3"
           name="RichMovie"
           provider-name="Richie"
           icon="icon.png"
