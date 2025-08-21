@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
-  <!-- Aktualizováno: 2025-07-28 11:05 CEST – odstraněn neplatný komentář v tagu <addon>, bump 1.4.3 -->
-
+  <!-- RichMovie addon -->
   <addon
           id="plugin.video.richmovie"
-          version="2.3.3"
+          version="2.2.3"
           name="RichMovie"
           provider-name="Richie"
           icon="icon.png"
