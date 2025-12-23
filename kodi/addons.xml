@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <addons>
-  <addon id="plugin.video.richmovie" version="2.4.74" name="RichMovie" provider-name="Richie" icon="icon.png" fanart="fanart.jpg">
+  <addon id="plugin.video.richmovie" version="2.4.8591" name="RichMovie" provider-name="Richie" icon="icon.png" fanart="fanart.jpg">
     <requires>
       <import addon="xbmc.python" version="3.0.0"></import>
       <import addon="script.module.requests" version="2.31.0"></import>
@@ -13,27 +13,37 @@
     <extension point="xbmc.service" library="service_warm.py" start="startup"></extension>
     <extension point="xbmc.addon.metadata">
       <assets>
-        <icon>icon.png</icon>
-        <fanart>fanart.jpg</fanart>
+        <icon>icon_christmas2.png</icon>
+        <fanart>fanart_christmas.jpg</fanart>
         <screenshot>resources/screenshots/screen01.png</screenshot>
         <screenshot>resources/screenshots/screen02.png</screenshot>
       </assets>
       <summary lang="cs">Rychlé vyhledávání a přehrávání filmů z Webshare.cz a Sosáče</summary>
       <summary lang="en">Search &amp; play movies from Webshare.cz and Sosac.tv in seconds</summary>
       <description lang="cs">
-            ⚡ <b>RichMovie 1.4</b> přidává Next-Up přednačítání, integraci Sosáče
-            (prémiový Streamuj.tv) a stále obsahuje vlastní kopii
-            <code>pymediainfo</code> – funguje tedy i offline.
+        <b>RichMovie</b> je pokročilý vyhledávač filmů a seriálů pro Kodi s důrazem na rychlost, přehledný výpis releasů a chytré filtrování.
+            Podporuje Webshare.cz a integraci Sosáče (prémiové odkazy přes Streamuj.tv resolver).
+            Obsah v doplňku <b>není hostovaný RichMovie</b> – doplněk pouze hledá dostupné soubory podle toho, co je na daných službách sdíleno.
+
+            <br></br>
+        <br></br>
+            Doplňek obsahuje vlastní lokální kopii <code>pymediainfo</code> a provádí analýzu streamů (MI2) pro lepší odhad kvality, audia a titulků.
+            Podporuje offline prvky (cache) a background služby (<code>service_nextup</code>, <code>service_warm</code>) pro plynulejší použití.
         </description>
       <description lang="en">
-            ⚡ <b>RichMovie 1.4</b> now includes Next-Up pre-loading and Sosac.tv
-            integration (premium Streamuj.tv links) while still shipping a
-            bundled copy of <code>pymediainfo</code>.
+        <b>RichMovie</b> is an advanced Kodi search add-on focused on speed, clean release listing and smart filtering.
+            It supports Webshare.cz and Sosac.tv integration (premium links via Streamuj.tv resolver).
+            RichMovie <b>does not host any content</b> – it only searches for files available on the supported services.
+
+            <br></br>
+        <br></br>
+            The add-on ships its own local <code>pymediainfo</code> bundle and performs stream analysis (MI2) to improve quality/audio/subtitle detection.
+            It uses caching and background services (<code>service_nextup</code>, <code>service_warm</code>) for smoother experience.
         </description>
       <platform>all</platform>
       <license>MIT</license>
       <changelog lang="cs">
-            v2.4.58 – přidána pozadová služba <code>service_warm.py</code> (tichý re‑warm s navázáním); sjednocení TTL TMDb na 30 dní; denní cache Trendů; drobné logování.<br></br>
+            v2.4.58 – přidána pozadová služba <code>service_warm.py</code> (tichý re-warm s navázáním); sjednocení TTL TMDb na 30 dní; denní cache Trendů; drobné logování.<br></br>
             v1.4.3 – oprava XML (komentář v tagu <code>&lt;addon&gt;</code>); nová ikona; bump verze kvůli instalaci.<br></br>
             v1.4.2 – přidána nová ikona doplňku (SnowWhite-wine).<br></br>
             v1.4.1 – přesunut <code>&lt;assets&gt;</code> do metadata (ikona se začala zobrazovat).<br></br>
