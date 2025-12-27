@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <addons>
-  <addon id="plugin.video.richmovie" version="2.4.8609" name="RichMovie" provider-name="Richie" icon="icon.png" fanart="fanart.jpg">
+  <addon id="plugin.video.richmovie" version="2.4.8610" name="RichMovie" provider-name="Richie" icon="icon.png" fanart="fanart.jpg">
     <requires>
       <import addon="xbmc.python" version="3.0.0"></import>
       <import addon="script.module.requests" version="2.31.0"></import>
