@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <addons>
-  <addon id="plugin.video.richmovie" version="2.4.8631" name="RichMovie" provider-name="Richie" icon="icon.png" fanart="fanart.jpg">
+  <addon id="plugin.video.richmovie" version="2.5.1000" name="RichMovie" provider-name="Richie" icon="icon.png" fanart="fanart.jpg">
     <requires>
       <import addon="xbmc.python" version="3.0.0"></import>
       <import addon="script.module.requests" version="2.31.0"></import>
@@ -14,7 +14,7 @@
     <extension point="xbmc.addon.metadata">
       <assets>
         <icon>icon_christmas2.png</icon>
-        <fanart>fanart_christmas.jpg</fanart>
+        <fanart>fanart2.jpg</fanart>
         <screenshot>resources/screenshots/screen01.png</screenshot>
         <screenshot>resources/screenshots/screen02.png</screenshot>
       </assets>
@@ -43,12 +43,27 @@
       <platform>all</platform>
       <license>MIT</license>
       <changelog lang="cs">
+            v2.4.8632 – Fastshare.cz integrace (sekundární zdroj streamů pro whitelist uživatele).<br></br>
             v2.4.58 – přidána pozadová služba <code>service_warm.py</code> (tichý re-warm s navázáním); sjednocení TTL TMDb na 30 dní; denní cache Trendů; drobné logování.<br></br>
             v1.4.3 – oprava XML (komentář v tagu <code>&lt;addon&gt;</code>); nová ikona; bump verze kvůli instalaci.<br></br>
             v1.4.2 – přidána nová ikona doplňku (SnowWhite-wine).<br></br>
             v1.4.1 – přesunut <code>&lt;assets&gt;</code> do metadata (ikona se začala zobrazovat).<br></br>
             v1.4.0 – Next-Up • integrace Sosáče • volitelný <code>script.module.stream.resolver</code> • lokální <code>pymediainfo</code>.
         </changelog>
+    </extension>
+  </addon>
+  <addon id="service.subtitles.richsubtitles" name="RichSubtitles (Titulky.com)" version="1.0.0" provider-name="Richie">
+    <requires>
+      <import addon="xbmc.python" version="3.0.0"></import>
+    </requires>
+    <extension point="xbmc.subtitle.module" library="service.py"></extension>
+    <extension point="xbmc.addon.metadata">
+      <platform>all</platform>
+      <language>cs cz sk</language>
+      <summary lang="cs">České a slovenské titulky z Titulky.com</summary>
+      <summary lang="en">Czech and Slovak subtitles from Titulky.com</summary>
+      <description lang="cs">Automatické stahování českých a slovenských titulků z Titulky.com. Součást RichMovie ekosystému. Premium účet integrován – žádná konfigurace nutná.</description>
+      <description lang="en">Automatic Czech and Slovak subtitle downloads from Titulky.com. Part of the RichMovie ecosystem. Premium account built-in – zero configuration needed.</description>
     </extension>
   </addon>
 </addons>
