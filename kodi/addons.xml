@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <addons>
-    <addon id="service.subtitles.richsubtitles" name="RichSubtitles (Titulky.com)" version="1.0.0" provider-name="Richie">
+    <addon id="service.subtitles.richsubtitles" name="RichSubtitles (Titulky.com)" version="1.0.4" provider-name="Richie">
         <requires>
             <import addon="xbmc.python" version="3.0.0" />
         </requires>
