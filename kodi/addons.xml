@@ -14,11 +14,12 @@
       <description lang="en">Automatic Czech and Slovak subtitle downloads from Titulky.com. Part of the RichMovie ecosystem. Premium account built-in – zero configuration needed.</description>
     </extension>
   </addon>
-  <addon id="plugin.video.richmovie" version="2.5.1041" name="RichMovie" provider-name="Richie" icon="icon.png" fanart="fanart.jpg">
+  <addon id="plugin.video.richmovie" version="2.5.1074" name="RichMovie" provider-name="Richie" icon="icon.png" fanart="fanart.jpg">
     <requires>
       <import addon="xbmc.python" version="3.0.0"></import>
       <import addon="script.module.requests" version="2.31.0"></import>
       <import addon="script.module.stream.resolver" version="1.7.3" optional="true"></import>
+      <import addon="inputstream.adaptive" version="21.0.0"></import>
       <import addon="service.subtitles.richsubtitles" version="1.0.0"></import>
     </requires>
     <extension point="xbmc.python.pluginsource" library="plugin.py">
