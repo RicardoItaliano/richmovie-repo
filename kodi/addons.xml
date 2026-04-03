@@ -2,9 +2,9 @@
 <addons>
   <addon id="service.subtitles.richsubtitles" name="RichSubtitles (Titulky.com)" version="1.0.4" provider-name="Richie">
     <requires>
-      <import addon="xbmc.python" version="3.0.0"></import>
+      <import addon="xbmc.python" version="3.0.0" />
     </requires>
-    <extension point="xbmc.subtitle.module" library="service.py"></extension>
+    <extension point="xbmc.subtitle.module" library="service.py" />
     <extension point="xbmc.addon.metadata">
       <platform>all</platform>
       <language>cs cz sk</language>
@@ -14,80 +14,99 @@
       <description lang="en">Automatic Czech and Slovak subtitle downloads from Titulky.com. Part of the RichMovie ecosystem. Premium account built-in – zero configuration needed.</description>
     </extension>
   </addon>
-  <addon id="plugin.video.richmovie" version="2.5.1076" name="RichMovie" provider-name="Richie" icon="icon.png" fanart="fanart.jpg">
-    <requires>
-      <import addon="xbmc.python" version="3.0.0"></import>
-      <import addon="script.module.requests" version="2.31.0"></import>
-      <import addon="script.module.stream.resolver" version="1.7.3" optional="true"></import>
-      <import addon="inputstream.adaptive" version="21.0.0"></import>
-      <import addon="service.subtitles.richsubtitles" version="1.0.0"></import>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="plugin.py">
-      <provides>video</provides>
-    </extension>
-    <extension point="xbmc.service" library="service_nextup.py" start="startup"></extension>
-    <extension point="xbmc.service" library="service_warm.py" start="startup"></extension>
-    <extension point="xbmc.addon.metadata">
-      <assets>
-        <icon>icon_christmas2.png</icon>
-        <fanart>fanart2.jpg</fanart>
-        <screenshot>resources/screenshots/screen01.png</screenshot>
-        <screenshot>resources/screenshots/screen02.png</screenshot>
-      </assets>
-      <summary lang="cs">Pokrocily vyhledavac filmu a serialu pro Kodi s integraci Webshare.cz</summary>
-      <summary lang="en">Advanced movie &amp; TV search for Kodi with Webshare.cz integration</summary>
-      <description lang="cs">
-        <b>RichMovie</b> je pokrocily vyhledavac filmu a serialu pro Kodi. Nehostuje zadny obsah – pouze hleda dostupne soubory na Webshare.cz podle toho, co tam nekdo z internetu nasdilel.
+  <addon id="plugin.video.richmovie" version="2.5.1092" name="RichMovie" provider-name="Richie" icon="icon.png" fanart="fanart.jpg">
 
-            <br></br>
-        <br></br>
-        <b>Hlavni funkce:</b>
-        <br></br>
-            • Rychle vyhledavani s metadaty z TMDb (plakaty, popisy, hodnoceni)<br></br>
-            • Analyza streamu (MI2) – automaticke rozpoznani kvality, audia a titulku<br></br>
-            • Automaticka lokalizace – prednostni vyber ceskeho dabingu a titulku<br></br>
-            • Zapamatovani jazykovych preferenci pro kazdy titul zvlast<br></br>
-            • Historie sledovani a Pokracovat ve sledovani<br></br>
-            • Kolekce – tematicke seznamy filmu (Vanoce, Marvel, Studio Ghibli…)<br></br>
-            • Next-Up – automaticke pokracovani na dalsi epizodu serialu<br></br>
-            • Integrace RichSubtitles – ceske titulky z Titulky.com<br></br>
+    
+    <requires>
+        
+        <import addon="xbmc.python" version="3.0.0" />
+
+        
+        <import addon="script.module.requests" version="2.31.0" />
+
+        
+        <import addon="script.module.stream.resolver" version="1.7.3" optional="true" />
+
+        
+        <import addon="inputstream.adaptive" version="21.0.0" />
+
+        
+        <import addon="service.subtitles.richsubtitles" version="1.0.0" />
+
+        
+    </requires>
+
+    
+    <extension point="xbmc.python.pluginsource" library="plugin.py">
+        <provides>video</provides>
+    </extension>
+
+    
+    <extension point="xbmc.service" library="service_nextup.py" start="startup" />
+
+    
+    <extension point="xbmc.service" library="service_warm.py" start="startup" />
+
+    
+    <extension point="xbmc.addon.metadata">
+
+        
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart2.jpg</fanart>
+            <screenshot>resources/screenshots/screen01.png</screenshot>
+            <screenshot>resources/screenshots/screen02.png</screenshot>
+        </assets>
+
+        <summary lang="cs">Pokrocily vyhledavac filmu a serialu pro Kodi s integraci Webshare.cz</summary>
+        <summary lang="en">Advanced movie &amp; TV search for Kodi with Webshare.cz integration</summary>
+
+        <description lang="cs">
+            <b>RichMovie</b> je pokrocily vyhledavac filmu a serialu pro Kodi. Nehostuje zadny obsah – pouze hleda dostupne soubory na Webshare.cz podle toho, co tam nekdo z internetu nasdilel.
+
+            <br /><br /><b>Hlavni funkce:</b><br />
+            • Rychle vyhledavani s metadaty z TMDb (plakaty, popisy, hodnoceni)<br />
+            • Analyza streamu (MI2) – automaticke rozpoznani kvality, audia a titulku<br />
+            • Automaticka lokalizace – prednostni vyber ceskeho dabingu a titulku<br />
+            • Zapamatovani jazykovych preferenci pro kazdy titul zvlast<br />
+            • Historie sledovani a Pokracovat ve sledovani<br />
+            • Kolekce – tematicke seznamy filmu (Vanoce, Marvel, Studio Ghibli…)<br />
+            • Next-Up – automaticke pokracovani na dalsi epizodu serialu<br />
+            • Integrace RichSubtitles – ceske titulky z Titulky.com<br />
             • Trendy a nejlepe hodnocene filmy/serialy
 
-            <br></br>
-        <br></br>
+            <br /><br />
             RichMovie je volnocasovy projekt od Richieho – zdarma, pro rodinu a pratele.
         </description>
-      <description lang="en">
-        <b>RichMovie</b> is an advanced movie and TV search add-on for Kodi. It <b>does not host any content</b> – it only searches for files available on Webshare.cz.
 
-            <br></br>
-        <br></br>
-        <b>Key features:</b>
-        <br></br>
-            • Fast search with TMDb metadata (posters, descriptions, ratings)<br></br>
-            • Stream analysis (MI2) – automatic detection of quality, audio and subtitles<br></br>
-            • Auto-localization – preferred Czech dubbing and subtitle selection<br></br>
-            • Per-title audio/subtitle preference memory<br></br>
-            • Watch history and Continue watching<br></br>
-            • Collections – curated movie lists (Christmas, Marvel, Studio Ghibli…)<br></br>
-            • Next-Up – automatic next episode for TV series<br></br>
-            • RichSubtitles integration – Czech subtitles from Titulky.com<br></br>
+        <description lang="en">
+            <b>RichMovie</b> is an advanced movie and TV search add-on for Kodi. It <b>does not host any content</b> – it only searches for files available on Webshare.cz.
+
+            <br /><br /><b>Key features:</b><br />
+            • Fast search with TMDb metadata (posters, descriptions, ratings)<br />
+            • Stream analysis (MI2) – automatic detection of quality, audio and subtitles<br />
+            • Auto-localization – preferred Czech dubbing and subtitle selection<br />
+            • Per-title audio/subtitle preference memory<br />
+            • Watch history and Continue watching<br />
+            • Collections – curated movie lists (Christmas, Marvel, Studio Ghibli…)<br />
+            • Next-Up – automatic next episode for TV series<br />
+            • RichSubtitles integration – Czech subtitles from Titulky.com<br />
             • Trending and top-rated movies/TV shows
 
-            <br></br>
-        <br></br>
+            <br /><br />
             RichMovie is a hobby project by Richie – free, for family and friends.
         </description>
-      <platform>all</platform>
-      <license>MIT</license>
-      <changelog lang="cs">
-            v2.5.1013 – oprava zobrazeni obrazku a popisku v historii serialu; oprava alternativnich stopazi u filmu.<br></br>
-            v2.5.1012 – oprava falesneho toastu „preference ulozeny“ pri prehravani.<br></br>
-            v2.5.1011 – moznost nacist kolekce na pozadi; lokalni TMDb sken bez blokovaciho dialogu.<br></br>
-            v2.5.1009 – stabilita na Androidu (omezeni vlaken, MI2 deduplikace, cache limit).<br></br>
-            v2.4.58 – pozadova sluzba service_warm; sjednoceni TMDb cache na 30 dni; denni cache Trendu.<br></br>
+
+        <platform>all</platform>
+        <license>MIT</license>
+
+        <changelog lang="cs">
+            v2.5.1013 – oprava zobrazeni obrazku a popisku v historii serialu; oprava alternativnich stopazi u filmu.<br />
+            v2.5.1012 – oprava falesneho toastu „preference ulozeny“ pri prehravani.<br />
+            v2.5.1011 – moznost nacist kolekce na pozadi; lokalni TMDb sken bez blokovaciho dialogu.<br />
+            v2.5.1009 – stabilita na Androidu (omezeni vlaken, MI2 deduplikace, cache limit).<br />
+            v2.4.58 – pozadova sluzba service_warm; sjednoceni TMDb cache na 30 dni; denni cache Trendu.<br />
             v1.4.0 – Next-Up sluzba; analyza streamu MI2; lokalni pymediainfo.
         </changelog>
     </extension>
-  </addon>
-</addons>
+</addon></addons>
