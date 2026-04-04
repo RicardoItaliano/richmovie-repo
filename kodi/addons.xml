@@ -14,7 +14,7 @@
       <description lang="en">Automatic Czech and Slovak subtitle downloads from Titulky.com. Part of the RichMovie ecosystem. Premium account built-in – zero configuration needed.</description>
     </extension>
   </addon>
-  <addon id="plugin.video.richmovie" version="2.5.1100" name="RichMovie" provider-name="Richie" icon="icon.png" fanart="fanart.jpg">
+  <addon id="plugin.video.richmovie" version="2.5.1101" name="RichMovie" provider-name="Richie" icon="icon.png" fanart="fanart.jpg">
 
     
     <requires>
