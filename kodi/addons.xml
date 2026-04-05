@@ -16,24 +16,30 @@
   </addon>
   <addon
         id="plugin.video.richmovie"
-        version="2.5.1113"
+        version="2.5.1114"
         name="RichMovie"
         provider-name="Richie"
         icon="icon.png"
         fanart="fanart.jpg">
 
+    <!-- ========== RUNTIME DEPENDENCIES ========== -->
     <requires>
+        <!-- Kodi Python API -->
         <import addon="xbmc.python"            version="3.0.0" />
 
+        <!-- HTTP klient pro Webshare SDK -->
         <import addon="script.module.requests" version="2.31.0" />
 
+        <!-- Stream resolver (volitelny; doplnek funguje i bez nej) -->
         <import addon="script.module.stream.resolver"
                 version="1.7.3"
                 optional="true" />
 
+        <!-- DASH / adaptive streaming pro YouTube a dalsi -->
         <import addon="inputstream.adaptive"
                 version="21.0.0" />
 
+        <!-- Titulkova sluzba RichSubtitles (Titulky.com) -->
         <import addon="service.subtitles.richsubtitles"
                 version="1.0.0" />
 
@@ -43,16 +49,21 @@
              včetně binárek libmediainfo.* pro více platforem. -->
     </requires>
 
+    <!-- ========== ENTRY POINT (PLUGIN GUI) ========== -->
     <extension point="xbmc.python.pluginsource" library="plugin.py">
         <provides>video</provides>
     </extension>
 
+    <!-- ========== BACKGROUND NEXT-UP SERVICE ========== -->
     <extension point="xbmc.service" library="service_nextup.py" start="startup" />
 
+    <!-- ========== BACKGROUND WARM SERVICE (nové) ========== -->
     <extension point="xbmc.service" library="service_warm.py" start="startup" />
 
+    <!-- ========== ADD-ON METADATA ========== -->
     <extension point="xbmc.addon.metadata">
 
+        <!-- ── ASSETS – Kodi 19+ vyžaduje právě zde ── -->
         <assets>
             <icon>icon.png</icon>
             <fanart>fanart2.jpg</fanart>
