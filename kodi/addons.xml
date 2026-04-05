@@ -16,7 +16,7 @@
   </addon>
   <addon
         id="plugin.video.richmovie"
-        version="2.5.1114"
+        version="2.5.1115"
         name="RichMovie"
         provider-name="Richie"
         icon="icon.png"
