@@ -14,7 +14,7 @@
       <description lang="en">Automatic Czech and Slovak subtitle downloads from Titulky.com. Part of the RichMovie ecosystem. Premium account built-in – zero configuration needed.</description>
     </extension>
   </addon>
-  <addon id="plugin.video.richmovie" version="3.0.2" name="RichMovie" provider-name="Richie" icon="icon.png" fanart="fanart.jpg">
+  <addon id="plugin.video.richmovie" version="3.0.3" name="RichMovie" provider-name="Richie" icon="icon.png" fanart="fanart.jpg">
     <!-- ========== RUNTIME DEPENDENCIES ========== -->
     <requires>
       <!-- Kodi Python API -->
@@ -87,6 +87,12 @@
       <platform>all</platform>
       <license>MIT</license>
       <changelog lang="cs">
+            v3.0.3 – opravy + UX vylepseni:
+• Fastshare crowdsource cache fix: bulk_lookup nyni nachazi cached probes (predtim 32% Fastshare zaznamu nedostupnych kvuli double `fs:` prefix bugu).
+• Info panel pod posterem: pridan plot, runtime, rating, votes, genre, cast, director, originalni titulek (predtim „Nejsou dostupne zadne informace“).
+• Stream details: audio/subtitle jazyky a video resolution se predavaji do Kodi `streamdetails` – skin Estuary zobrazuje vlajky/ikony.
+• Badge rozsireni: SK dab, SK tit, EN tit (predtim jen CZ dab, CZ tit, EN dab).
+• LabelFormatter: kvalita zobrazena bez mezer uvnitr `[]` zavorek.<br />
             v3.0.2 – oprava UX: pri auto-search z TMDb klikni (TV tipy / Top filmy / Trendy) se behem MI2 wait okna ted zobrazuji rotujici tipy (predtim jen busy spinner). Manualni keyboard search uz fungoval spravne.<br />
             v3.0.1 – oprava ZIP archivu (POSIX paths) pro spolehlivou Kodi instalaci na Linux/Android. Funkcionalita beze zmeny vuci 3.0.0.<br />
             v3.0.0 – Major architektonicke prepracovani: thin-client. Addon je nyni cista Kodi GUI vrstva, vsechen scraping, MediaInfo probe i TMDb proxy bezi na centralnim NAS Gate (~52 MB ze 129 MB).
