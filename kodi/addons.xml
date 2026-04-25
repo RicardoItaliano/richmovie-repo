@@ -14,7 +14,7 @@
       <description lang="en">Automatic Czech and Slovak subtitle downloads from Titulky.com. Part of the RichMovie ecosystem. Premium account built-in – zero configuration needed.</description>
     </extension>
   </addon>
-  <addon id="plugin.video.richmovie" version="3.0.0" name="RichMovie" provider-name="Richie" icon="icon.png" fanart="fanart.jpg">
+  <addon id="plugin.video.richmovie" version="3.0.1" name="RichMovie" provider-name="Richie" icon="icon.png" fanart="fanart.jpg">
     <!-- ========== RUNTIME DEPENDENCIES ========== -->
     <requires>
       <!-- Kodi Python API -->
@@ -87,6 +87,7 @@
       <platform>all</platform>
       <license>MIT</license>
       <changelog lang="cs">
+            v3.0.1 – oprava ZIP archivu (POSIX paths) pro spolehlivou Kodi instalaci na Linux/Android. Funkcionalita beze zmeny vuci 3.0.0.<br />
             v3.0.0 – Major architektonicke prepracovani: thin-client. Addon je nyni cista Kodi GUI vrstva, vsechen scraping, MediaInfo probe i TMDb proxy bezi na centralnim NAS Gate (~52 MB ze 129 MB).
 
 • Streaming: BYOC (Bring Your Own Credentials) – soubory jdou primo z Webshare/Fastshare CDN na zarizeni uzivatele, NAS bytes nepretece.
