@@ -2,9 +2,11 @@
 <addons>
 <!-- Aktualizováno: 2026-02-22 – metadata přepsána dle aktuálního stavu RichMovie. -->
 
+<!-- Aktualizováno: 2026-02-22 – metadata přepsána dle aktuálního stavu RichMovie. -->
+
 <addon
         id="plugin.video.richmovie"
-        version="3.5.58"
+        version="3.5.65"
         name="RichMovie"
         provider-name="Richie"
         icon="icon.png"
@@ -91,6 +93,7 @@
         <license>MIT</license>
 
         <changelog lang="cs">
+            v3.5.59 &#x2013; Žádné probliknutí Kodi oken při „Pokračovat" (root-cause):&#xA;&#x2022; Občas se při kliknutí na &#x201E;Pokračovat&#x201C; na okamžik objevilo Kodi okno &#x201E;Doplňky&#x201C;. Příčina: long-tail obrazovky (Historie/Zdroje/CSFD/NAS) se otevírají jako reálné Kodi Videos okno, které pak zůstalo ZÁKLADEM pod custom Home dialogem &#x2013; při startu přehrávání se Home zavře a Videos okno se na okamžik odhalí.&#xA;&#x2022; Fix (SSOT): při každém vstupu do custom okna se základ resetuje na skin Home, pokud pod ním zůstalo Kodi Videos okno &#x2013; nic z Kodi UI už neproblikne. &#x201E;Pro tebe&#x201C; dlaždice bez TMDb nově otevře custom AI grid místo Kodi adresáře.<br/>
             v3.5.0 &#x2013; Čistá beta řada (přečíslování) &#x2013; sjednocuje vše z 3.4.9&#x2013;3.4.16 do přehledného čísla:&#xA;&#x2022; Úklid mrtvých OpenAI pozůstatků (jedeme na RichClaudeAI).&#xA;&#x2022; Zelená ✔ u dokoukaných epizod + „Naposledy sledované seriály&#x201C; (2 kliky do epizod).&#xA;&#x2022; Odolnost vůči výpadku NAS (offline-grace 30 dní, blok při běžícím serveru okamžitý).&#xA;&#x2022; Chytrý výběr streamu podle tvého dabingu/titulků (auto-next-up i ruční seznam).&#xA;&#x2022; Živá telemetrie sledování opravena (set_player_context + hook v běžící službě) &#x2013; AI doporučení z reálného sledování. Synchronizace na server NEzávisí na zavření Kodi (flush po každém přehrání + daemon periodic). Beta řada 3.5.x je vždy napřed před stabilní 3.4.x.<br/>
             v3.4.16 &#x2013; Synchronizace dat NEZÁVISÍ na zavření Kodi (důležité pro TV se standby):&#xA;&#x2022; Realita: TV jde do pohotovosti a Kodi se prakticky nikdy nezavírá ani nerestartuje (jen probudí uspané). Synchronizace sledování na server proto NESMÍ záviset na zavření aplikace.&#xA;&#x2022; Fix: watch_event se odešle na server HNED po každém dokončeném přehrávání (flush_in_background v player_hook._finalize) + periodický flush běží jako DAEMON vlákno (resilience retry + finalizace search eventů). Žádný blokující shutdown flush. Daemon je tu bezpečný — buffer je durable na disku a Gate dedupuje podle client_event_id, takže ani přerušený flush nic neztratí, a navíc NIKDY neblokuje zavírání Kodi (řeší i 'Kodi se někdy nezavře').&#xA;&#x2022; Prošetřeno KOMPLETNĚ, co vše záviselo na zavření Kodi: jediná reálná závislost byla telemetrie (opraveno). Continue Watching (ukládá se při zastavení + každých 30 s), uživatelské logy (periodický drainer), instalace kolekcí (průběžný state) i lokální data (watched/historie/preference, zápis okamžitě) na zavření NEzávisí. Plán: Handoff/PLAN_fu4_telemetry_2026-05-30.md.<br/>
             v3.4.15 &#x2013; Oprava regrese z 3.4.14 (pomalé zavírání Kodi):&#xA;&#x2022; 3.4.14 bootstrapoval celý telemetrický subsystém včetně NON-DAEMON periodického flush vlákna (každých 5 min), které se při zavření Kodi neukončilo včas → Kodi se zavíralo ~27 s + threading SystemExit v logu. (Vlákno se reálně poprvé spustilo, protože service_warm, kde žilo, nikdy neběží.)&#xA;&#x2022; Fix: bootstrap zúžen na nezbytné — připojení hooku (get_player) + flush na startu + flush při shutdownu (bounded timeout). Periodické 5min vlákno vynecháno (eventy se flushnou na startu a při zavření, bez ztráty). Kodi se zavírá zase rychle.&#xA;&#x2022; Telemetrie zachycení (hook + set_player_context) funguje dál — ověřeno živě (onAVStarted tmdb_id=351339 'Anthropoid').<br/>
