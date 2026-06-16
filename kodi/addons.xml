@@ -4,9 +4,11 @@
 
 <!-- Aktualizováno: 2026-02-22 – metadata přepsána dle aktuálního stavu RichMovie. -->
 
+<!-- Aktualizováno: 2026-02-22 – metadata přepsána dle aktuálního stavu RichMovie. -->
+
 <addon
         id="plugin.video.richmovie"
-        version="3.5.65"
+        version="3.5.66"
         name="RichMovie"
         provider-name="Richie"
         icon="icon.png"
