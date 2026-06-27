@@ -8,7 +8,7 @@
 
 <addon
         id="plugin.video.richmovie"
-        version="3.5.69"
+        version="3.5.70"
         name="RichMovie"
         provider-name="Richie"
         icon="icon.png"
@@ -95,6 +95,7 @@
         <license>MIT</license>
 
         <changelog lang="cs">
+            v3.5.70 &#x2013; Diagnostika po zařízeních (interní):&#xA;&#x2022; Každý záznam v logu i přihlášení se nově značí stabilním ID zařízení &#x2013; když něco zlobí na jednom z více zařízení pod stejným účtem, jde přesně poznat, na kterém (dřív to nešlo rozlišit).&#xA;&#x2022; Bez dopadu na chování pro uživatele &#x2013; čistě lepší diagnostika.<br/>
             v3.5.69 &#x2013; Oprava: „Chybí API klíč TMDb" se ukazovalo bezdůvodně:&#xA;&#x2022; U některých účtů (např. po obnově přihlášení) hlásily sekce Filmy/Seriály a A.I. doporučení &#x201E;Chybí API klíč TMDb&#x201C;, i když vše má běžet automaticky &#x2013; klíč drží server.&#xA;&#x2022; Příčina: addon na 37 místech vyžadoval lokálně uložený klíč, který se plnil jen při úspěšném přihlášení k Webshare. Nově se klíč bere automaticky ze serveru (jediný zdroj pravdy) &#x2013; uživatel nikdy nic nezadává.<br/>
             v3.5.68 &#x2013; Oprava: nový design se omylem zapínal rodině (fail-safe = legacy):&#xA;&#x2022; Při výpadku/prázdné cache (žádný auth, expirovaný lease) se rodinnému účtu mlčky zapnul nový RM 4.0 design, který mít nemá &#x2013; a s ním se zacyklilo potvrzení dabingu/titulků (nešlo nic pustit).&#xA;&#x2022; Příčina: rozhodování o UI failovalo &#x201E;open&#x201C; (chyba/prázdná cache → nový design) v rozporu s vlastní dokumentací. Nově fail-safe = legacy: nový design jen při výslovném povolení z platné cache. Beta/povolené účty beze změny.<br/>
             v3.5.67 &#x2013; Oprava detekce platformy v diagnostice (SSOT):&#xA;&#x2022; Telemetrie i crash reporty hlásily &#x201E;Zaneprázdněno&#x201C; místo skutečného OS zařízení (Windows/Android/macOS) &#x2013; v admin logu pak nešlo rozlišit, ze kterého zařízení záznam je.&#xA;&#x2022; Sjednoceno na jediný zdroj pravdy (detect_platform) napříč auth/telemetrií/crashem; odstraněn mrtvý duplicitní kód. Pro uživatele beze změny chování.<br/>
