@@ -10,7 +10,7 @@
 
 <addon
         id="plugin.video.richmovie"
-        version="3.5.118"
+        version="3.5.119"
         name="RichMovie"
         provider-name="Richie"
         icon="icon.png"
@@ -97,6 +97,7 @@
         <license>MIT</license>
 
         <changelog lang="cs">
+            v3.5.119 &#x2013; Když zdroj (Webshare/FastShare) uprostřed filmu přestane posílat data:&#xA;&#x2022; RichMovie už to nebere jako konec filmu &#x2013; film se neoznačí jako dokoukaný a nezmizí z &#x201E;Pokračovat ve sledování".&#xA;&#x2022; Přehrávání samo naváže tam, kde se přerušilo (až 3&#xD7; po sobě); když zdroj seká dál, nabídne výběr jiného streamu. Jde vypnout v nastavení Next-Up.&#xA;&#x2022; Vyrovnávací paměť streamu se nastaví podle paměti zařízení (místo 20 MB pro všechny) &#x2013; bez restartu Kodi, vlastní ruční nastavení se nepřepisuje.&#xA;&#x2022; Oprava: jeden vadný záznam o sledování mohl zablokovat odesílání všech dalších na server (AI doporučení pak neměla čerstvá data). Vadné záznamy se odkládají stranou a zbytek se odešle.<br/>
             v3.5.118 &#x2013; Instalace na novém zařízení už nepošle tisíce zbytečných dotazů a neotráví si data:&#xA;&#x2022; Kolekce se začnou připravovat až po přihlášení k serveru &#x2013; dřív to startovalo ještě během zadávání hesla a každý neúspěch se zapsal jako &#x201E;film neexistuje" na 7 dní.&#xA;&#x2022; RichMovie nově pozná, že mu server odmítl přihlášení (třeba po změně hesla k Webshare), řekne to lidsky a přestane dál zkoušet, dokud se nepřihlásíš znovu.&#xA;&#x2022; Chvilkový výpadek serveru se už neukládá jako trvalá informace o filmu nebo souboru (kolekce, MediaInfo, Pokračovat ve sledování, prohřívání dat).&#xA;&#x2022; Uživatelé postižení dřívějším zápisem se sami uzdraví při prvním spuštění &#x2013; bez mazání souborů.<br/>
             v3.5.117 &#x2013; Vnitřní úklid po auditu (bez dopadu na chování):&#xA;&#x2022; Z nové síťové vrstvy odstraněn kód, který nakonec nikde nebyl potřeba. Méně kódu = méně míst, kde se může něco pokazit.<br/>
             v3.5.116 &#x2013; Zotavení z výpadku sítě funguje i u zdrojů a doplňkových sekcí:&#xA;&#x2022; Ochrana proti chvilkovým výpadkům (z 3.5.113) se nově týká i Webshare, FastShare, SkTorrent, SOSAC, Stream.cz, YouTube, ČSFD a doporučení &#x2013; dřív se opakovaly jen dotazy do filmové databáze.&#xA;&#x2022; Vyhledávání tak přežije zakolísání Wi-Fi, aniž by vrátilo prázdný seznam.&#xA;&#x2022; Vnitřní úklid: devět kopií stejného kódu pro stahování dat nahradila jedna sdílená funkce (bez dopadu na chování).<br/>
