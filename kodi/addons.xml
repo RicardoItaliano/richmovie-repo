@@ -10,7 +10,7 @@
 
 <addon
         id="plugin.video.richmovie"
-        version="3.5.121"
+        version="3.5.122"
         name="RichMovie"
         provider-name="Richie"
         icon="icon.png"
@@ -97,6 +97,7 @@
         <license>MIT</license>
 
         <changelog lang="cs">
+            v3.5.122 &#x2013; Oprava přihlášení po čisté instalaci:&#xA;&#x2022; Verze 3.5.120 a 3.5.121 se na nově nainstalovaném doplňku (nebo po odhlášení) nezeptaly na přihlášení k Webshare a místo toho hlásily, že se nepodařilo načíst přihlašovací údaje &#x2013; ani restart Kodi nepomohl. Chyba byla v kontrole, která má poznat poruchu čtení nastavení: prázdnou hodnotu zapsanou Kodi si spletla s hodnotou vyplněnou. Kdo už byl přihlášený, nic nepoznal.&#xA;&#x2022; Kontrola teď čte soubor nastavení přesně tak, jak ho Kodi zapisuje, a stejný případ hlídá i regresní test.<br/>
             v3.5.121 &#x2013; Zabezpečení odesílání diagnostiky (interní):&#xA;&#x2022; Záznamy o chybách a hlášení pádů se dosud daly na server poslat i pod cizím jménem &#x2013; stačilo ho znát. Nově musí odesílající doložit, že je opravdu tím, za koho se vydává. Bez dopadu na chování pro uživatele.<br/>
             v3.5.120 &#x2013; Konec tichých poruch a diagnostika na dálku:&#xA;&#x2022; Když si doplněk nedokázal přečíst vlastní nastavení, choval se, jako by nebylo vyplněné: hlásil &#x201E;Data se nepodařilo načíst", ptal se znovu a znovu na dabing a titulky, zahodil přihlášení k Webshare a chtěl heslo, které na zařízení ve skutečnosti je. Nově se taková porucha rozpozná &#x2013; nic se nemaže, na heslo se doplněk neptá a v hlášce stojí, co s tím (restartovat Kodi).&#xA;&#x2022; Odesílání diagnostiky na server se dřív umělo tiše zastavit a nikdo se to nedozvěděl (u jednoho zařízení 15 hodin). Teď o sobě dá vědět a připojí i údaje potřebné k určení příčiny.&#xA;&#x2022; Nové &#x201E;Odeslat diagnostiku správci" v hlavním menu (a na vyžádání i automaticky): odešle výběr z technického logu Kodi &#x2013; chybové hlášky a záznamy RichMovie. Vždy až po tvém potvrzení. Neposílají se hesla ani co sleduješ v jiných doplňcích.<br/>
             v3.5.119 &#x2013; Když zdroj (Webshare/FastShare) uprostřed filmu přestane posílat data:&#xA;&#x2022; RichMovie už to nebere jako konec filmu &#x2013; film se neoznačí jako dokoukaný a nezmizí z &#x201E;Pokračovat ve sledování".&#xA;&#x2022; Přehrávání samo naváže tam, kde se přerušilo (až 3&#xD7; po sobě); když zdroj seká dál, nabídne výběr jiného streamu. Jde vypnout v nastavení Next-Up.&#xA;&#x2022; Vyrovnávací paměť streamu se nastaví podle paměti zařízení (místo 20 MB pro všechny) &#x2013; bez restartu Kodi, vlastní ruční nastavení se nepřepisuje.&#xA;&#x2022; Oprava: jeden vadný záznam o sledování mohl zablokovat odesílání všech dalších na server (AI doporučení pak neměla čerstvá data). Vadné záznamy se odkládají stranou a zbytek se odešle.<br/>
