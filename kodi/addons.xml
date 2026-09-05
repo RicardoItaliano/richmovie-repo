@@ -10,7 +10,7 @@
 
 <addon
         id="plugin.video.richmovie"
-        version="3.5.129"
+        version="3.5.142"
         name="RichMovie"
         provider-name="Richie"
         icon="icon.png"
@@ -37,11 +37,9 @@
         <provides>video</provides>
     </extension>
 
-    <!-- ========== BACKGROUND NEXT-UP SERVICE ========== -->
+    <!-- ========== BACKGROUND SERVICE (jediná — Kodi spouští jen jeden xbmc.service per addon;
+         warm-up TMDb, log drainer i telemetrie běží jako vlákna uvnitř service_nextup, 3.5.130) ========== -->
     <extension point="xbmc.service" library="service_nextup.py" start="startup" />
-
-    <!-- ========== BACKGROUND WARM SERVICE (nové) ========== -->
-    <extension point="xbmc.service" library="service_warm.py" start="startup" />
 
     <!-- ========== ADD-ON METADATA ========== -->
     <extension point="xbmc.addon.metadata">
@@ -97,6 +95,18 @@
         <license>MIT</license>
 
         <changelog lang="cs">
+            v3.5.141 &#x2013; Cross-check vlna 2: Cloudflare HTML 403 už nezahodí přihlášení k Gate, TMDb 429 vrací data z cache místo prázdného menu, dokoukání se rozhoduje i podle zbývajícího času (dlouhé filmy / krátké díly) a jednou pro celý addon, přechod na profily na sdílených zařízeních nepřepíše historii majiteli, služba si umí obnovit odmítnutou identitu, sloučení stavu nesahá na právě přehrávaný titul.<br/>
+            v3.5.140 &#x2013; Cross-check vlna 1: stav profilu vždy pod zámkem, všechny zápisy historie/✔/Moje listy přes trvanlivý atomický zápis, odesílání logů respektuje zamítnutou identitu a Retry-After, jednotné hlavičky Gate požadavků.<br/>
+            v3.5.139 &#x2013; Chooser profilů: řada avatarů vycentrovaná podle počtu profilů.<br/>
+            v3.5.138 &#x2013; Chooser profilů se nezobrazoval: GET na seznam profilů šel bez User-Agent a Cloudflare ho blokoval; hlavičky Gate požadavků sjednoceny (gate_headers), při nedostupnosti Gate se zobrazí hláška.<br/>
+            v3.5.137 &#x2013; Oprava přechodu na profily: atomický zápis v binárním režimu (Kodi na Windows překládal konce řádků → „migration failed“), dokončení přesunu historie majiteli i po přerušení, ověření kopie po obsahu.<br/>
+            v3.5.136 &#x2013; Výraznější fokus v dialozích profilů (bílý rámeček, sytá modrá, zoom) u tlačítek onboardingu i chooseru.<br/>
+            v3.5.135 &#x2013; Onboarding profilů jako velký dialog (celý text vidět, tři tlačítka) místo rolujícího systémového dialogu; oprava bloku profiles v /auth (Gate).<br/>
+            v3.5.134 &#x2013; Profily „Kdo se dívá?“: až 5 profilů na jednom Webshare účtu, každý s vlastní historií, Pokračovat, zhlédnutými díly, Moje listy a doporučeními. Jednorázový dotaz při první aktualizaci (jen já / více lidí), výběr profilu při každém startu s avatary, řádek „Dívá se“ v menu, správa v Nastavení → Profily (i „toto zařízení je moje“), Host bez ukládání. Historie napříč zařízeními: Pokračovat, zhlédnuto a odebráno se posílá na Gate (během přehrávání po 60 s, po stopu hned) a ostatní zařízení si to stáhnou do 30 s — řádek Pokračovat ukáže „z TV obývák před 2 h“; menu se překreslí jen když v něm nečinně stojíš (nikdy uprostřed hledání nebo seznamu streamů). Fotky profilů z Gate se projeví bez restartu Kodi. Uživatelé s jedním profilem nic nepoznají.<br/>
+            v3.5.133 &#x2013; ČSFD profil: stav synchronizace lidsky a v místním čase („synchronizováno dnes 07:00“, „data z 5. září 07:00“), po ruční synchronizaci hlášení, co přibylo, srozumitelné chyby místo kódů, zkratka do Moje ČSFD. Jeden zdroj formátu času pro celý doplněk.<br/>
+            v3.5.132 &#x2013; Doporučení pro vás: v seznamu je vidět ★ hodnocení, štítky jsou česky („Pro tebe“, „Český tip“, „Objev mimo tvé žánry“) a bez znaků, které Kodi neumí vykreslit.<br/>
+            v3.5.131 &#x2013; Tipy, TOP 1000, Moje ČSFD, doporučení v2:&#xA;&#x2022; Hlášky při hledání: kdo má vlastní hlášky, má je dál; ostatním se místo nich náhodně ukazují dnešní ČSFD TV tipy a střídají se dvakrát pomaleji.&#xA;&#x2022; ČSFD TOP 1000: opraveno stránkování žebříčku na serveru (stránka 2 a dál dřív opakovala prvních 99 filmů); Trendy, TOP a žánry z TMDb mají „Další stránka“.&#xA;&#x2022; Moje ČSFD: u „Chci vidět“ je vidět hodnocení, datum přidání a stav synchronizace; ČSFD zrušilo staré API, server přechází na nové.&#xA;&#x2022; Doporučení pro vás: každý batch obsahuje jen nové tituly (nic viděného, hodnoceného ani doporučeného za posledních 45 dní), hlavička říká, z kdy jsou, a v kontextovém menu je „Nezajímá mě“. Server skládá kandidáty z více zdrojů (podle toho, co jsi dokoukal, ČSFD Chci vidět, TOP 1000, trendy, české filmy) a hodnotí je deterministicky před AI.&#xA;&#x2022; Přehrávání hlásí žánry a hodnocení titulu, takže profil chuti už není slepý.<br/>
+            v3.5.130 &#x2013; Doladění po incidentu s Webshare VIP:&#xA;&#x2022; Automatické přehrání dalšího dílu už nikdy neotevře v noci dialog: bez VIP nebo bez platného přihlášení se díl tiše přeskočí s krátkým upozorněním.&#xA;&#x2022; Hlavní menu volá server jen jednou (dřív dvakrát) a předběžné načtení Trendy/TOP/žánrů z TMDb, které mělo běžet od 2025, teď skutečně běží (nejvýš 1× za 12 hodin, jen online).&#xA;&#x2022; Ve výběru streamů je stream, který účet nepřehraje, ztlumený se štítkem „VIP vypršel".&#xA;&#x2022; Doplněk hlásí serveru stav VIP (kolik dní zbývá), takže správce vidí, komu VIP končí, dřív než se přehrávání rozbije.&#xA;&#x2022; Server: metadata bez skutečných stop se nikdy neukládají ani neposílají; nečitelná složka Filmoteky na NASu se hlásí hlasitě (dřív tichý sken s nulou souborů); souběžné prověřování streamů má strop kvůli paměti NASu.<br/>
             v3.5.129 &#x2013; Webshare bez VIP už neskončí u „Přehrávání selhalo":&#xA;&#x2022; Když Webshare účtu vyprší VIP, doplněk to řekne rovnou (jednorázový dialog + označení „VIP vypršel" u streamů z Webshare, Fastshare se řadí první) místo záhadné chyby Kodi. Dřív Webshare vrátil místo videa webovou stránku a Kodi na ní ztroskotalo.&#xA;&#x2022; Před spuštěním se každý Webshare odkaz ověří přímo z tvého zařízení (jeden krátký dotaz). Když CDN vydá stránku nebo chybu místo videa, zkusí se náhradní stream a případně se ukáže srozumitelná hláška – žádné technické výpisy.&#xA;&#x2022; Server už neukládá „prázdná" metadata z takových stránek do sdílené paměti (dřív to jiným uživatelům skrylo dabing, titulky i délku u 267 souborů) a staré záznamy uklidil.&#xA;&#x2022; Selhané otevření streamu se do diagnostiky zapisuje jako varování s dobou do selhání, ne jako ruční stop.<br/>
             v3.5.128 &#x2013; Soukromá databáze na NAS: okamžité menu, katalog staví server:&#xA;&#x2022; Procházení souborů na NASu se otevírá okamžitě z místní kopie katalogu &#x2013; dřív doplněk při každém spuštění procházel celý sdílený disk po síti a každý soubor sám dohledával na TMDb (čím víc souborů, tím déle).&#xA;&#x2022; Katalog nově staví server přímo na NASu, průběžně a jen pro změněné složky. Párování s TMDb používá souvislosti z cesty (seriál/sezóna/díl) a práh jistoty &#x2013; konec nesmyslů typu „Zoufalé manželky" spárované s MMA zápasem.&#xA;&#x2022; Přehrávání zůstává napřímo z NASu jako dosud.<br/>
             v3.5.127 &#x2013; Vyrovnávací paměť streamu se řídí skutečnou rychlostí linky:&#xA;&#x2022; Doplněk během přehrávání měří, jak rychle se plní vyrovnávací paměť (údaj, který Kodi poskytuje zdarma &#x2013; žádný test rychlosti, žádný provoz navíc), a porovnává to s tím, co by daná velikost zvládla na ideální lince.&#xA;&#x2022; Velikost paměti začíná na bezpečných 128 MB a roste jen tehdy, když měření prokáže, že má linka rezervu (a klesá, když se plní pomalu nebo stream vypadává). Nejvýš jedna změna za den, nikdy nad strop podle RAM. Zařízení s prokazatelně rychlou linkou si dnešní hodnotu podrží.&#xA;&#x2022; Správce může na serveru nastavit horní strop pro celou skupinu (jen brzda &#x2013; nikdy nezvyšuje a nepřebíjí vlastní nastavení uživatele).<br/>
