@@ -10,7 +10,7 @@
 
 <addon
         id="plugin.video.richmovie"
-        version="3.5.146"
+        version="3.5.147"
         name="RichMovie"
         provider-name="Richie"
         icon="icon.png"
