@@ -10,7 +10,7 @@
 
 <addon
         id="plugin.video.richmovie"
-        version="3.5.150"
+        version="3.5.151"
         name="RichMovie"
         provider-name="Richie"
         icon="icon.png"
@@ -95,6 +95,8 @@
         <license>MIT</license>
 
         <changelog lang="cs">
+            v3.5.151 &#x2013; Navazování přehrávání bez závodu s Kodi (incident ve vlaku 16.09.2026):&#xA;&#x2022; Pokračovat, automatické navázání po utnutí streamu i navázání z jiného zařízení předávají pozici přímo Kodi (bod navázání v přehrávané položce) &#x2013; video se otevře rovnou na místě. Dřív se přetáčelo až po spuštění a Kodi přetočení tiše zahodilo, když stream otevíral déle než desetinu sekundy (asi 4 z 10 navázání od začátku).&#xA;&#x2022; Služba navázání ověří a případně opraví; dokud není ověřené, nepřepíše Pokračovat nižší pozicí. Když se nepodaří, hraje se dál, toast řekne čas a Pokračovat zůstane na původním místě.&#xA;&#x2022; Mrtvý zdroj po výpadku sítě: když Kodi po chybě DNS spojení už neotevře a jede jen z vyrovnávací paměti, RichMovie to pozná a po návratu sítě spojení hned obnoví na aktuální pozici (dřív až tvrdý konec souboru po desítkách minut).&#xA;&#x2022; Návrat sítě se pozná podle spojení se zdrojem videa (Webshare/Fastshare), ne podle serveru RichMovie &#x2013; navázání funguje i při nedostupném serveru. Když se po delším výpadku síť vrátí a máš otevřený dialog nebo klávesnici, přehrávání se přes ně samo nespustí.&#xA;&#x2022; Při automatickém přehrávání se další díl vybírá ve STEJNÉ VERZI jako minulý díl (řada vydání, kodek, rozlišení, podobný datový tok) místo největšího souboru; po výpadcích na zařízení preferuje nižší datový tok. Při startu toast, jaká verze se pustila a proč.&#xA;&#x2022; Slučování stavu z jiných zařízení: jedno sloučení naráz napříč procesy, zelené ✔ se zapisují dávkou pod zámkem, chyba čtení nikdy nepřepíše ✔ prázdnem a synchronizace se neposune, dokud se změny opravdu nezapíšou; jedna vadná položka ze serveru ale synchronizaci nezastaví.<br/>
+            v3.5.142&#x2013;v3.5.150 &#x2013; Souhrn (changelog doplněn zpětně 17.09.2026):&#xA;&#x2022; 3.5.143&#x2013;144: stav i osobní kolekce profilu (historie, Moje listy, preference, ✔) napříč zařízeními přes Gate.&#xA;&#x2022; 3.5.145&#x2013;146: diagnostika posílá celý konec logu; uvítací sekvence po startu běží v jednom procesu, výběr profilu poslední.&#xA;&#x2022; 3.5.147: onboarding účtu bez profilů neotravuje, dotaz na Gate před automatickým navázáním, dávkový upload kolekcí.&#xA;&#x2022; 3.5.148: Pokračovat v reálném čase a předání pozice mezi zařízeními, jména zařízení.&#xA;&#x2022; 3.5.149: „Díváš se ještě?" u automatického přehrávání dalších dílů, díly bez diváka bez zeleného ✔.&#xA;&#x2022; 3.5.150: „Kdo se dívá?" řazené podle tohoto zařízení, oprava sezónní ikony.<br/>
             v3.5.141 &#x2013; Cross-check vlna 2: Cloudflare HTML 403 už nezahodí přihlášení k Gate, TMDb 429 vrací data z cache místo prázdného menu, dokoukání se rozhoduje i podle zbývajícího času (dlouhé filmy / krátké díly) a jednou pro celý addon, přechod na profily na sdílených zařízeních nepřepíše historii majiteli, služba si umí obnovit odmítnutou identitu, sloučení stavu nesahá na právě přehrávaný titul.<br/>
             v3.5.140 &#x2013; Cross-check vlna 1: stav profilu vždy pod zámkem, všechny zápisy historie/✔/Moje listy přes trvanlivý atomický zápis, odesílání logů respektuje zamítnutou identitu a Retry-After, jednotné hlavičky Gate požadavků.<br/>
             v3.5.139 &#x2013; Chooser profilů: řada avatarů vycentrovaná podle počtu profilů.<br/>
