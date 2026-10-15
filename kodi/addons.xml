@@ -12,7 +12,7 @@
 
 <addon
         id="plugin.video.richmovie"
-        version="4.0.4"
+        version="4.0.5"
         name="RichMovie"
         provider-name="Richie"
         icon="icon.png"
@@ -97,6 +97,7 @@
         <license>MIT</license>
 
         <changelog lang="cs">
+            v4.0.5 &#x2013; Profily pro celou rodinu kdykoli (15.10.2026)&#xA;&#x2022; Zvolil jsi při prvním spuštění „Jen já“ a teď se dívá víc lidí? Nastavení → Profily → „Ano, založit“ – zadáš jména a hned uvidíš „Kdo se dívá?“. Všechno dosavadní připadne prvnímu profilu.&#xA;&#x2022; Když profily přibudou na jiném zařízení, „Kdo se dívá?“ se tady ukáže hned při dalším otevření menu – už ne až po restartu Kodi. Nikdy ne přes rozkoukané video.&#xA;&#x2022; Nic se neztratí: i to, co se dívalo těsně před přechodem, připadne prvnímu profilu, a smazání z Pokračovat se přenese.<br/>
             v4.0.4 &#x2013; Pod kapotou (10.10.2026)&#xA;&#x2022; Přesnější měření, který stream sis u dílu seriálu vybral &#x2013; podle něj se ladí pořadí výpisu, aby nejlepší stream byl nahoře.&#xA;&#x2022; Pustíš si znovu díl, který už máš odškrtnutý na jiném zařízení? Pokračovat všude hned ukáže, kde zrovna jsi.&#xA;&#x2022; Video pozastavené přes noc: jakmile ho ráno zastavíš, seznam se obnoví (dřív mohl zůstat ve stavu z večera).<br/>
             v4.0.3 &#x2013; Co jsi viděl, zůstane viděné (10.10.2026)&#xA;&#x2022; Díl dokoukaný na kterémkoli zařízení má ✔ všude a natrvalo. Když si ho později znovu pustíš, ✔ nezmizí.&#xA;&#x2022; Rozkoukané díly uvidíš rovnou v seznamu: ◐ „rozkoukáno 23 z 45 min · Telefon · včera“, u řady souhrn „6/10 ✔ · rozkoukaný díl 7“ a u streamu „◐ pokračuj od 23:10“. Klik naváže sám, „Přehrát od začátku“ je v menu.&#xA;&#x2022; Díly, které se pouštějí samy za sebou, se počítají jako viděné i bez sáhnutí na ovladač. Otázka „Díváš se ještě?“ přijde až po 3 dílech nebo 90 minutách a „Dnes už končím“ tě nikam nevrací.&#xA;&#x2022; Jen když nikdo neodpoví, díly dostanou ⏾ a Pokračovat počká s volbou „od začátku / už ho mám za sebou“.&#xA;&#x2022; Klik na další díl během titulků už předchozí díl správně uzavře.&#xA;&#x2022; Film i díl dokoukaný do titulků má ✔, i když telefon nebo TV aplikaci uspí dřív, než doběhne konec — a z Pokračovat zmizí.&#xA;&#x2022; Pojistka proti pádu Kodi mezi dvěma díly vydrží i pomalou síť (hlídá ji samostatné vlákno).&#xA;&#x2022; Pokračovat ukazuje za každý seriál jeden řádek; „Odebrat z Pokračovat“ skryje celý seriál.<br/>
             v4.0.2 &#x2013; Kodi nespadne ani s pozastaveným videem (10.10.2026)&#xA;&#x2022; Máš video pozastavené a v menu něco změníš (třeba odebereš titul z Pokračovat)? Seznam se už nepřenačítá pod rukama &#x2013; obnoví se sám, jakmile přehrávání zastavíš. Dřív mohl návrat k videu uprostřed přenačítání shodit celé Kodi, hlavně na pomalejších televizích a boxech.&#xA;&#x2022; Mezi dvěma díly seriálu se seznam nepřenačítá &#x2013; další díl naskočí bez rizika pádu.&#xA;&#x2022; Změny z jiného zařízení se v hlavní nabídce ukážou hned po zastavení videa (nebo při dalším otevření).<br/>
