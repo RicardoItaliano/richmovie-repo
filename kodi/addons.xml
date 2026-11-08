@@ -12,7 +12,7 @@
 
 <addon
         id="plugin.video.richmovie"
-        version="4.0.6"
+        version="4.1.0"
         name="RichMovie"
         provider-name="Richie"
         icon="icon.png"
@@ -97,6 +97,7 @@
         <license>MIT</license>
 
         <changelog lang="cs">
+            v4.1.0 &#x2013; Televize a hledání, které přežije výpadek (08.11.2026)&#xA;&#x2022; Nová sekce Televize – jen na zařízeních, kde ji máš zapnutou: živé kanály přes náš NAS, u každého logo, co běží teď a co bude potom; jedno kliknutí a hraje. Zatím doma a v kanceláři.&#xA;&#x2022; Když Webshare nejde (jako v noci na 8. listopadu), RichMovie to pozná během pár sekund, najde filmy na Fastshare a řekne ti pravdu – žádné minuty čekání na „nic nenalezeno“.&#xA;&#x2022; Přímé hledání na Webshare se při jeho výpadku taky zeptá Fastshare.<br/>
             v4.0.6 &#x2013; Filmy jedou i tam, kde dřív nešly (04.11.2026)&#xA;&#x2022; Nová volba: RichMovie se může otevřít hned po zapnutí Kodi. Zeptá se tě jednou; když v Kodi používáš i jiné doplňky, nech ji vypnutou. Změníš ji v Nastavení → Zařízení.&#xA;&#x2022; Mac s Časem u obrazovky („Omezit weby pro dospělé“): ten filtr pouští velké soubory jen po kouscích, takže se filmy zasekávaly. RichMovie ho teď pozná, řekne ti přesně, jak ho vypnout, a už si nemyslí, že jsi offline.&#xA;&#x2022; Dolby Vision: streamy, které tvoje zařízení neumí ukázat (černý obraz), jdou ve výpisu až za ostatní a mají štítek „⚠ DV“.&#xA;&#x2022; Kodi se vypíná hned &#x2013; RichMovie už nedrží zavírání, když zrovna čeká na síť.<br/>
             v4.0.5 &#x2013; Profily pro celou rodinu kdykoli (15.10.2026)&#xA;&#x2022; Zvolil jsi při prvním spuštění „Jen já“ a teď se dívá víc lidí? Nastavení → Profily → „Ano, založit“ – zadáš jména a hned uvidíš „Kdo se dívá?“. Všechno dosavadní připadne prvnímu profilu.&#xA;&#x2022; Když profily přibudou na jiném zařízení, „Kdo se dívá?“ se tady ukáže hned při dalším otevření menu – už ne až po restartu Kodi. Nikdy ne přes rozkoukané video.&#xA;&#x2022; Nic se neztratí: i to, co se dívalo těsně před přechodem, připadne prvnímu profilu, a smazání z Pokračovat se přenese.<br/>
             v4.0.4 &#x2013; Pod kapotou (10.10.2026)&#xA;&#x2022; Přesnější měření, který stream sis u dílu seriálu vybral &#x2013; podle něj se ladí pořadí výpisu, aby nejlepší stream byl nahoře.&#xA;&#x2022; Pustíš si znovu díl, který už máš odškrtnutý na jiném zařízení? Pokračovat všude hned ukáže, kde zrovna jsi.&#xA;&#x2022; Video pozastavené přes noc: jakmile ho ráno zastavíš, seznam se obnoví (dřív mohl zůstat ve stavu z večera).<br/>
