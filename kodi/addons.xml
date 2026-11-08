@@ -12,7 +12,7 @@
 
 <addon
         id="plugin.video.richmovie"
-        version="4.3.0"
+        version="4.3.1"
         name="RichMovie"
         provider-name="Richie"
         icon="icon.png"
@@ -105,6 +105,7 @@
         <license>MIT</license>
 
         <changelog lang="cs">
+            v4.3.1 &#x2013; Čitelnější Televize a plynulé dýchání profilu (08.11.2026)&#xA;&#x2022; Panel Televize ztmaví celou obrazovku – film pod ním už tolik neprosvítá a sloupec „Dál na …“ je dobře čitelný.&#xA;&#x2022; „Kdo se dívá?“: kolem zvoleného profilu dýchá měkká záře – plynule, bez cukání a bez ořezaných okrajů.<br/>
             v4.3.0 &#x2013; Televize pro tebe (08.11.2026)&#xA;&#x2022; Nový první výběr „Pro tebe“: kanály, na které se díváš nejvíc a nejdéle, se samy řadí nahoru – učí se z tvého sledování, zvlášť pro každý profil, a ví i to, co sleduješ večer a co ráno.&#xA;&#x2022; Vpravo nový sloupec „Dál na …“ – co na kanálu poběží dál, s časy a délkou.&#xA;&#x2022; „Kdo se dívá?“: zvolený profil jemně pulzuje, ať je hned vidět, kdo je vybraný.<br/>
             v4.2.1 &#x2013; Televize se už sama nepřelaďuje (08.11.2026)&#xA;&#x2022; Na Chromecastu a dalších zařízeních s Androidem se kanál každých pár vteřin znovu ladil („Ladím…“) – přehrávač tam při běžném vysílání posouvá čas a Televize to brala jako přetáčení. Teď pozná jen skutečné přetočení.&#xA;&#x2022; První otevření Televize na novém zařízení se už nezasekne – seznam kanálů je hned ovladatelný.<br/>
             v4.2.0 &#x2013; Televize jako aplikace (08.11.2026)&#xA;&#x2022; Televize má vlastní okno: obraz přes celou obrazovku, po stisku OK panel s logy kanálů a náhledem pořadu, co běží teď a co dál, oblíbené, skryté a vlastní pořadí, ztlumení jedním tlačítkem. Přepínání šipkami i čísly jako u televize.&#xA;&#x2022; Oblíbené kanály, skryté a pořadí si pamatuje tvůj profil – platí na všech tvých zařízeních.<br/>
