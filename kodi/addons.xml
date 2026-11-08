@@ -12,7 +12,7 @@
 
 <addon
         id="plugin.video.richmovie"
-        version="4.1.2"
+        version="4.2.0"
         name="RichMovie"
         provider-name="Richie"
         icon="icon.png"
@@ -105,6 +105,7 @@
         <license>MIT</license>
 
         <changelog lang="cs">
+            v4.2.0 &#x2013; Televize jako aplikace (08.11.2026)&#xA;&#x2022; Televize má vlastní okno: obraz přes celou obrazovku, po stisku OK panel s logy kanálů a náhledem pořadu, co běží teď a co dál, oblíbené, skryté a vlastní pořadí, ztlumení jedním tlačítkem. Přepínání šipkami i čísly jako u televize.&#xA;&#x2022; Oblíbené kanály, skryté a pořadí si pamatuje tvůj profil – platí na všech tvých zařízeních.<br/>
             v4.1.2 &#x2013; Televize i na Androidu (08.11.2026)&#xA;&#x2022; Chromecast a další zařízení s Androidem nemají přehrávač živého vysílání vůbec nainstalovaný – RichMovie si ho teď při aktualizaci stáhne sám z oficiálního repozitáře Kodi. Televize pak nevypadává, nepřehazuje jazyky zvuku a sama volí kvalitu podle sítě.<br/>
             v4.1.1 &#x2013; Televize nevypadává po půl minutě (08.11.2026)&#xA;&#x2022; Na Chromecastu a dalších zařízeních s Androidem se živý kanál po 20–30 sekundách sám vypnul: Kodi tam má přehrávač živého vysílání (InputStream Adaptive) vypnutý. RichMovie ho teď po aktualizaci zapne sám – nic nenastavuješ. Jen na zařízeních, kde máš Televizi.<br/>
             v4.1.0 &#x2013; Televize a hledání, které přežije výpadek (08.11.2026)&#xA;&#x2022; Nová sekce Televize – jen na zařízeních, kde ji máš zapnutou: živé kanály přes náš NAS, u každého logo, co běží teď a co bude potom; jedno kliknutí a hraje. Zatím doma a v kanceláři.&#xA;&#x2022; Když Webshare nejde (jako v noci na 8. listopadu), RichMovie to pozná během pár sekund, najde filmy na Fastshare a řekne ti pravdu – žádné minuty čekání na „nic nenalezeno“.&#xA;&#x2022; Přímé hledání na Webshare se při jeho výpadku taky zeptá Fastshare.<br/>
