@@ -12,7 +12,7 @@
 
 <addon
         id="plugin.video.richmovie"
-        version="4.2.0"
+        version="4.2.1"
         name="RichMovie"
         provider-name="Richie"
         icon="icon.png"
@@ -105,6 +105,7 @@
         <license>MIT</license>
 
         <changelog lang="cs">
+            v4.2.1 &#x2013; Televize se už sama nepřelaďuje (08.11.2026)&#xA;&#x2022; Na Chromecastu a dalších zařízeních s Androidem se kanál každých pár vteřin znovu ladil („Ladím…“) – přehrávač tam při běžném vysílání posouvá čas a Televize to brala jako přetáčení. Teď pozná jen skutečné přetočení.&#xA;&#x2022; První otevření Televize na novém zařízení se už nezasekne – seznam kanálů je hned ovladatelný.<br/>
             v4.2.0 &#x2013; Televize jako aplikace (08.11.2026)&#xA;&#x2022; Televize má vlastní okno: obraz přes celou obrazovku, po stisku OK panel s logy kanálů a náhledem pořadu, co běží teď a co dál, oblíbené, skryté a vlastní pořadí, ztlumení jedním tlačítkem. Přepínání šipkami i čísly jako u televize.&#xA;&#x2022; Oblíbené kanály, skryté a pořadí si pamatuje tvůj profil – platí na všech tvých zařízeních.<br/>
             v4.1.2 &#x2013; Televize i na Androidu (08.11.2026)&#xA;&#x2022; Chromecast a další zařízení s Androidem nemají přehrávač živého vysílání vůbec nainstalovaný – RichMovie si ho teď při aktualizaci stáhne sám z oficiálního repozitáře Kodi. Televize pak nevypadává, nepřehazuje jazyky zvuku a sama volí kvalitu podle sítě.<br/>
             v4.1.1 &#x2013; Televize nevypadává po půl minutě (08.11.2026)&#xA;&#x2022; Na Chromecastu a dalších zařízeních s Androidem se živý kanál po 20–30 sekundách sám vypnul: Kodi tam má přehrávač živého vysílání (InputStream Adaptive) vypnutý. RichMovie ho teď po aktualizaci zapne sám – nic nenastavuješ. Jen na zařízeních, kde máš Televizi.<br/>
