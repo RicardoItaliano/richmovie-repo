@@ -12,7 +12,7 @@
 
 <addon
         id="plugin.video.richmovie"
-        version="4.1.1"
+        version="4.1.2"
         name="RichMovie"
         provider-name="Richie"
         icon="icon.png"
@@ -21,17 +21,25 @@
     <!-- ========== RUNTIME DEPENDENCIES ========== -->
     <!-- 2026-04-27 (3.3.0): Zero external deps. Vsechny pure-Python knihovny
          (requests, urllib3, certifi, idna, chardet) jsou vendorovane v
-         resources/lib/vendor/. inputstream.adaptive je volitelny pro YouTube
-         DASH (kod ma progressive fallback v _yt_has_inputstream_adaptive).
-         Stream.resolver dead code smazan. Instalace neresi zadne externi
-         servery — jen xbmc.python (Kodi runtime) a richsubtitles (z naseho
-         repa). -->
+         resources/lib/vendor/. Stream.resolver dead code smazan. Python
+         zavislosti zadne externi — xbmc.python (Kodi runtime), richsubtitles
+         (z naseho repa) a od 4.1.2 binarni prehravac inputstream.adaptive
+         z OFICIALNIHO repozitare Kodi (Televize; YouTube DASH ho pouzije take). -->
     <requires>
         <!-- Kodi Python API (Kodi runtime, zero fetch) -->
         <import addon="xbmc.python" version="3.0.0" />
 
         <!-- Titulkova sluzba RichSubtitles (z richmovie-repo, ne externi) -->
         <import addon="service.subtitles.richsubtitles" version="1.0.0" />
+
+        <!-- 4.1.2 (08.11.2026): přehrávač živého vysílání. Bez něj hraje Televizi FFmpeg Kodi: na Androidu konec po ~25 s,
+             jediná varianta 11 Mbit/s, přehozené zvukové stopy (Chromecast Petry). Android ho v balíčku NEMÁ
+             (4.1.1: `System.HasAddon` = False). Kodi ho při instalaci / aktualizaci RichMovie stáhne z OFICIÁLNÍHO
+             repozitáře podle platformy a vypnutý zapne (Kodi Omega `AddonInstaller.cpp` CheckDependencies → EnableAddon,
+             `AddonRepos.cpp` FindDependency → oficiální verze). Oficiální repo nabízí 19.0.7 (Kodi 19) a 21.5.25 (Kodi 21)
+             pro windows / android-armv7 / android-aarch64 / osx (ověřeno 08.11.2026); 19.0.0 = nejstarší Kodi rodiny
+             (19.4 / 19.5 na Windows). `minversion` ISA nedeklaruje → splní ho 19, 20 i 21. -->
+        <import addon="inputstream.adaptive" version="19.0.0" />
     </requires>
 
     <!-- ========== ENTRY POINT (PLUGIN GUI) ========== -->
@@ -97,6 +105,7 @@
         <license>MIT</license>
 
         <changelog lang="cs">
+            v4.1.2 &#x2013; Televize i na Androidu (08.11.2026)&#xA;&#x2022; Chromecast a další zařízení s Androidem nemají přehrávač živého vysílání vůbec nainstalovaný – RichMovie si ho teď při aktualizaci stáhne sám z oficiálního repozitáře Kodi. Televize pak nevypadává, nepřehazuje jazyky zvuku a sama volí kvalitu podle sítě.<br/>
             v4.1.1 &#x2013; Televize nevypadává po půl minutě (08.11.2026)&#xA;&#x2022; Na Chromecastu a dalších zařízeních s Androidem se živý kanál po 20–30 sekundách sám vypnul: Kodi tam má přehrávač živého vysílání (InputStream Adaptive) vypnutý. RichMovie ho teď po aktualizaci zapne sám – nic nenastavuješ. Jen na zařízeních, kde máš Televizi.<br/>
             v4.1.0 &#x2013; Televize a hledání, které přežije výpadek (08.11.2026)&#xA;&#x2022; Nová sekce Televize – jen na zařízeních, kde ji máš zapnutou: živé kanály přes náš NAS, u každého logo, co běží teď a co bude potom; jedno kliknutí a hraje. Zatím doma a v kanceláři.&#xA;&#x2022; Když Webshare nejde (jako v noci na 8. listopadu), RichMovie to pozná během pár sekund, najde filmy na Fastshare a řekne ti pravdu – žádné minuty čekání na „nic nenalezeno“.&#xA;&#x2022; Přímé hledání na Webshare se při jeho výpadku taky zeptá Fastshare.<br/>
             v4.0.6 &#x2013; Filmy jedou i tam, kde dřív nešly (04.11.2026)&#xA;&#x2022; Nová volba: RichMovie se může otevřít hned po zapnutí Kodi. Zeptá se tě jednou; když v Kodi používáš i jiné doplňky, nech ji vypnutou. Změníš ji v Nastavení → Zařízení.&#xA;&#x2022; Mac s Časem u obrazovky („Omezit weby pro dospělé“): ten filtr pouští velké soubory jen po kouscích, takže se filmy zasekávaly. RichMovie ho teď pozná, řekne ti přesně, jak ho vypnout, a už si nemyslí, že jsi offline.&#xA;&#x2022; Dolby Vision: streamy, které tvoje zařízení neumí ukázat (černý obraz), jdou ve výpisu až za ostatní a mají štítek „⚠ DV“.&#xA;&#x2022; Kodi se vypíná hned &#x2013; RichMovie už nedrží zavírání, když zrovna čeká na síť.<br/>
